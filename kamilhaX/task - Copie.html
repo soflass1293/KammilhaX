@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>Gravity</title>
+        <meta name="description" content="">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <!-- Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="css/material_components.css">
+        <link rel="stylesheet" type="text/css" href="css/input.css">
+        <link rel="import" href="https://www.polymer-project.org/0.5/components/paper-ripple/paper-ripple.html">
+        <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
+        <link rel="import" href="http://www.polymer-project.org/components/font-roboto/roboto.html">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,500" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/animsition/3.5.2/css/animsition.css">
+        <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+        <link rel="stylesheet" href="storage.googleapis.com/code.getmdl.io/1.0.2/material.indigo-pink.min.css">
+        <link rel="stylesheet" href="css/swipebox.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/task.css">
+        <link rel="stylesheet" href="css/checkbox.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://rawgit.com/FezVrasta/bootstrap-material-design/master/dist/css/material.min.css" />
+        <link rel="stylesheet" href="./css/bootstrap-material-datetimepicker.css" />
+        <script data-cfasync="false">$SA = {s: 245648, tag_info: "1.0.1-autotag", asynch: 1, useBlacklistUrl: 1};
+            (function () {
+                var sa = document.createElement("script");
+                sa.type = "text/javascript";
+                sa.async = true;
+                sa.src = ("https:" == document.location.protocol ? "https://" + $SA.s + ".sa" : "http://" + $SA.s + ".a") + ".siteapps.com/" + $SA.s + ".js";
+                var t = document.getElementsByTagName("script")[0];
+                t.parentNode.insertBefore(sa, t);
+            })();</script>
+    </head>
+    <body onload="prepareHomePage()">
+        <div class="animsition">
+            <!-- Header -->
+            <div>
+                <header class="mdl-layout__header mdl-layout__header--waterfall">
+                    <div class="mdl-layout__header-row">
+                        <button id="backToTasksButton" style="padding-right:32px;float:left; margin-left:-23%;" class="mdl-button mdl-js-button mdl-button--icon" data-upgraded=",MaterialButton">
+                            <i class="material-icons">arrow_back</i>
+                        </button>
+                        <input id="taskNameTextField" type="text" placeholder="Edit task name">
+                        <button id="taskMenuButton" class="mdl-button mdl-js-button mdl-button--icon" data-upgraded=",MaterialButton">
+                            <i class="material-icons">reorder</i>
+                        </button>
+                        <button id="editTaskButton" class="mdl-button mdl-js-button mdl-button--icon" data-upgraded=",MaterialButton">
+                            <i class="material-icons">done</i>
+                        </button>
+                    </div>
+                </header>
+                <!-- Top-right Dropdown Menu -->
+                <div class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect">
+                    <a href="login.html" class="animsition-link"><span class="mdl-menu__item">Login</span></a>
+                    <a href="messages.html" class="animsition-link"><span class="mdl-menu__item mdl-badge" data-badge="4">Messages</span></a>
+                    <a href="player.html" class="animsition-link"><span class="mdl-menu__item">Player</span></a>
+                    <a href="calendar.html" class="animsition-link"><span class="mdl-menu__item">Calendar</span></a>
+                    <a href="settings.html" class="animsition-link"><span class="mdl-menu__item">Settings</span></a>
+                </div>
+                <!-- Sidebar -->
+                <div class="mdl-layout__drawer">
+                    <!-- Top -->
+                    <div class="mdl-card mdl-shadow--2dp mdl-color--primary mdl-color-text--blue-grey-50 drawer-profile">
+                        <div class="mdl-card__title user">
+                            <img id="currentUserPhoto" alt="" />
+                            <span class="user-name"></span>
+                            <span id="currentUserEmail" class="user-mail">soflass1293@gmail.com</span>
+                            <button id="user-menu" class="mdl-button mdl-js-button mdl-button--icon">
+                                <i class="material-icons">arrow_drop_down</i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Dropdown Menu -->
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="user-menu">
+                        <li class="mdl-menu__item">hello@email.com</li>
+                        <li class="mdl-menu__item">info@domain.net</li>
+                        <li class="mdl-menu__item">Add another account...</li>
+                    </ul>
+                    <!-- Main Navigation -->
+                    <nav class="mdl-navigation">
+                        <a class="mdl-navigation__link animsition-link" href="home.html"><i class="material-icons">home</i><span>Home</span></a>
+                        <a class="mdl-navigation__link animsition-link" href="profile.html"><i class="material-icons">account_circle</i><span>Profile</span></a>
+                        <div class="mdl-collapse">
+                            <a class="mdl-navigation__link mdl-collapse__button"><i class="material-icons">image</i>
+                                <i class="material-icons mdl-collapse__icon mdl-animation--default">expand_more</i>
+                                <span>Gallery</span>
+                            </a>
+                            <div class="mdl-collapse__content-wrapper">
+                                <div class="mdl-collapse__content mdl-animation--default" style="margin-top: -156px;">
+                                    <a class="mdl-navigation__link animsition-link" href="grid.html">Grid</a>
+                                    <a class="mdl-navigation__link animsition-link" href="masonry.html">Masonry</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdl-collapse">
+                            <a class="mdl-navigation__link mdl-collapse__button"><i class="material-icons">library_books</i>
+                                <i class="material-icons mdl-collapse__icon mdl-animation--default">expand_more</i>
+                                <span>Blog</span>
+                            </a>
+                            <div class="mdl-collapse__content-wrapper">
+                                <div class="mdl-collapse__content mdl-animation--default" style="margin-top: -156px;">
+                                    <a class="mdl-navigation__link animsition-link" href="blog.html">Category</a>
+                                    <a class="mdl-navigation__link animsition-link" href="article.html">Article</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="mdl-navigation__link animsition-link" href="media.html"><i class="material-icons">queue_music</i><span>Media</span></a>
+                        <div class="drawer-separator"></div>
+                        <div class="mdl-collapse">
+                            <a class="mdl-navigation__link mdl-collapse__button"><i class="material-icons">apps</i>
+                                <i class="material-icons mdl-collapse__icon mdl-animation--default">expand_more</i>
+                                <span>App</span>
+                            </a>
+                            <div class="mdl-collapse__content-wrapper">
+                                <div class="mdl-collapse__content mdl-animation--default" style="margin-top: -156px;">
+                                    <a class="mdl-navigation__link animsition-link" href="login.html">Login</a>
+                                    <a class="mdl-navigation__link animsition-link" href="messages.html">Messages</a>
+                                    <a class="mdl-navigation__link animsition-link" href="calendar.html">Calendar</a>
+                                    <a class="mdl-navigation__link animsition-link" href="settings.html">Settings</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <!-- Page Content -->
+                <main class="mdl-layout__content">
+            </div>
+            <div id="optionsTable" style="position: fixed;top: 93%; z-index:100;">
+                <table style="text-align:center; height:48px;border:solid #B6B6B6 1px;">
+                    <tr>
+                        <td id="addTimeButton" style="width:230px;cursor:pointer;border:solid #F5F5F5 1px;"><i class="material-icons">timer</i><!--Date and time--></td><td id="addSubtaskButton" style="width:20%;cursor:pointer;border:solid #F5F5F5 1px;"><i class="material-icons">&#xE03B;</i><!--Subtasks--></td><td id="addNoteButton" style="width:20%;cursor:pointer;border:solid #F5F5F5 1px;"><i class="material-icons">chat</i><!--Reminder--></td><td id="addMapButton" style="width:20%;cursor:pointer;border:solid #F5F5F5 1px;"><i class="material-icons">map</i><!--Note--></td><td style="width:20%;cursor:pointer;border:solid #F5F5F5 1px;"><i class="material-icons">group</i><!--Location--></td></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="retrievedSubtasksDiv" style="padding:5%;">
+                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                    <tr style="cursor:pointer;float:left;">
+                        <td onclick="$('#retrievedSubtasksTableBody td').slideToggle(300);
+                                $('#retrievedSubtasksTableBody').fadeToggle(300);"><b>SUBTASKS</b></td>
+                    </tr>
+                    <tbody id="retrievedSubtasksTableBody">
+                    </tbody>
+                </table>
+            </div>
+            <input type="text" id="date-format" style="background:red;" placeholder="Choose a time">
+            </main>
+        </div>
+        <!------------------------------------------------------------------->
+        <!------------------------------------------------------------------->
+        <!------------------------------------------------------------------->
+        <div id="all">
+            <section>
+
+            </section>
+            <section>
+                <div id="subtaskAdderDialog" style="position:fixed; top:200px;" class="dialog">
+                    <div style="padding-top:25px;" class="content">
+                        <div class="group">      
+                            <input id="subtaskNameTextField" style="color:black;" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Add a subtask</label>
+                        </div>
+                    </div>
+                    <div id="subtaskAdderAcceptButton" style="cursor:pointer;" class="button label-blue">
+                        <div class="center" fit>ACCEPT</div>
+                        <paper-ripple fit></paper-ripple>
+                    </div>
+                    <div id="subtaskAdderDeclineButton" style="cursor:pointer;" class="button">
+                        <div class="center" fit>DECLINE</div>
+                        <paper-ripple fit></paper-ripple>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div id="noteAdderDialog" style="position:fixed; top:200px;" class="dialog">
+                    <div style="padding-top:25px;" class="content">
+                        <div class="group">      
+                            <input id="noteAdderTextField" type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Add a note</label>
+                        </div>
+                    </div>
+                    <div id="noteAdderAcceptButton" style="cursor:pointer;" class="button label-blue">
+                        <div class="center" fit>ACCEPT</div>
+                        <paper-ripple fit></paper-ripple>
+                    </div>
+                    <div id="noteAdderDeclineButton" style="cursor:pointer;" class="button">
+                        <div class="center" fit>DECLINE</div>
+                        <paper-ripple fit></paper-ripple>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="menu" style="position:absolute; left: 120px; top:38px;" id="taskMenu" >
+                    <div id="importantMenuItem" style="cursor:pointer;" class="item">
+                        <div class="label" fit>Mark as important</div>
+                        <paper-ripple fit></paper-ripple>
+                    </div>
+                    <div id="doneMenuItem" style="cursor:pointer;" class="item">
+                        <div class="label" fit>Mark as done</div>
+                        <paper-ripple fit></paper-ripple>
+                    </div>
+                    <div id="archiveMenuItem" style="cursor:pointer;" class="item">
+                        <div class="label" fit>Archive</div>
+                        <paper-ripple fit></paper-ripple>
+                    </div>
+            </section>
+        </div>
+        <script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
+
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/application/jquery-2.1.4.min.js"></script>
+        <script src="cdnjs.cloudflare.com/ajax/libs/animsition/3.5.2/js/jquery.animsition.js"></script>
+        <script src="js/sweetalert.min.js"></script> 
+        <script src="storage.googleapis.com/code.getmdl.io/1.0.3/material.min.js"></script>
+        <script src="js/jquery.swipebox.min.js"></script>
+        <script src="js/function.js"></script>
+        <script src="js/sweet.js"></script>
+        <!------------------------------------------------------------------>
+        <script src="js/parse-1.3.5.min.js"></script>
+        <script src="js/application/task.js"></script>
+        <script type="text/javascript" src="js/application/timer/date-time-picker-initializer.js"></script>
+        <script type="text/javascript" src="js/application/timer/bootstrap-material-datetimepicker.js"></script>
+        <script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
+        <script type="text/javascript" src="https://rawgit.com/FezVrasta/bootstrap-material-design/master/dist/js/material.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+    </body>
+</html>

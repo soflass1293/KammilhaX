@@ -1,0 +1,35 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/material_components.css">
+  <link rel="stylesheet" type="text/css" href="css/input.css">
+  <link rel="import" href="https://www.polymer-project.org/0.5/components/paper-ripple/paper-ripple.html">
+  <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
+  <link rel="import" href="http://www.polymer-project.org/components/font-roboto/roboto.html">
+</head>	
+  <section>
+  
+    <div class="dialog">
+    
+      <div style="padding-top:25px;" class="content">
+        <div class="group">      
+		  <input type="text" required>
+		  <span class="highlight"></span>
+		  <span class="bar"></span>
+		  <label>Add a subtask</label>
+		</div>
+      </div>
+    
+      <div class="button label-blue" onclick="alert('ACCEPT');">
+        <div class="center" fit>ACCEPT</div>
+        <paper-ripple fit></paper-ripple>
+      </div>
+      
+      <div class="button" onclick="alert('ACCEPT');">
+        <div class="center" fit>DECLINE</div>
+        <paper-ripple fit></paper-ripple>
+      </div>
+    
+    </div>
+  
+  </section>
+  
